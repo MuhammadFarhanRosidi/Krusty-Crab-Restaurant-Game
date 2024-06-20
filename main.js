@@ -22,6 +22,42 @@ let listPemesan = [
     price: 100,
     isCorrect: false,
   },
+  {
+    name: "shaqueela",
+    orderedBurger: ["bun-bottom", "beef", "beef", "bun-top"],
+    description: "aku mau burger yang bikin senyum lebar",
+    price: 100,
+    isCorrect: false,
+  },
+  {
+    name: "laravelia",
+    orderedBurger: ["bun-bottom", "lettuice", "lettuice", "bun-top"],
+    description: "burger diet kayaknya sehat",
+    price: 100,
+    isCorrect: false,
+  },
+  {
+    name: "adit",
+    orderedBurger: ["bun-bottom", "cheese", "beef", "cheese", "bun-top"],
+    description: "burger asin kayaknya menarik",
+    price: 100,
+    isCorrect: false,
+  },
+  {
+    name: "sultan arab",
+    orderedBurger: [
+      "bun-bottom",
+      "lettuice",
+      "beef",
+      "cheese",
+      "beef",
+      "lettuice",
+      "bun-top",
+    ],
+    description: "habibi, ane mau pesan burger sultan dubai",
+    price: 100,
+    isCorrect: false,
+  },
 ];
 
 // ! Variable Initiation
