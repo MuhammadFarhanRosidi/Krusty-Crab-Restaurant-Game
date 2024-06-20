@@ -4,13 +4,15 @@ let listPemesan = [
     name: "Asep",
     orderedBurger: ["bun-bottom", "bun-top"],
     description:
-      "Saya ingin burger yang gaada daging dan gaada sayur.",
-    price: 20,
+      " Saya ingin burger yang gaada sayur",
+    price: 100,
     isCorrect: false,
   },
   {
     name: "Hanni pham",
     orderedBurger: ["bun-bottom", "beef", "cheese", "bun-top"],
+    description: "aku mau cheeseburger tanpa sayur ya",
+    price: 100,
     description: "aku mau burger dikasih spongebob 1 lapis",
     price: 40,
     isCorrect: false,
