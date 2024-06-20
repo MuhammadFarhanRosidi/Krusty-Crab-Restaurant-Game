@@ -15,7 +15,7 @@
   <body>
     <div class="desktop-only">
       <div class="desktop-container">
-        <h1>Only Desktop</h1>
+        <h1>Desktop Only</h1>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
                 <div class="card card-count">
                   <div class="card-body">
                     <h1 class="count-value" id="money-gaji">0</h1>
-                    <p class="count-title">Uang</p>
+                    <p class="count-title">Dollar</p>
                   </div>
                 </div>
               </div>
@@ -55,8 +55,7 @@
                   Pemesan: Asep
                 </h2>
                 <p class="question-desc" id="question-desc">
-                  Saya ingin burger yang gaada daging dan gaada sayur. saya
-                  hanya ingin roti
+                  Saya ingin burger yang gaada daging dan gaada sayur.
                 </p>
               </div>
               <!-- Question -->
@@ -70,7 +69,7 @@
                 aria-valuemax="100"
                 style="height: 20px"
               > -->
-              <div
+              <!-- <div
                 class="progress"
                 role="progressbar"
                 aria-label="Example 20px high"
@@ -81,6 +80,17 @@
                   style="width: 0%"
                   id="progress-bar"
                 ></div>
+              </div> -->
+
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Example with label"
+                style="height: 30px"
+              >
+                <div id="progress-bar" class="progress-bar" style="width: 0%">
+                  Proses: 0%
+                </div>
               </div>
               <!-- Progress Bar -->
             </div>
@@ -110,10 +120,10 @@
           Hapus
         </button>
         <button type="button" class="btn btn-serve btn-lg" id="btn-serve">
-          Serve
+          Berikan ke pembeli
         </button>
       </div>
-      <div class="slice-section mb-5">
+      <div class="slice-section mb-5 container">
         <button class="btn btn-item-slice" id="bun-top">
           <!--add id-->
           <div class="card card-slice">
@@ -177,13 +187,98 @@
       </div>
     </div>
 
+    <!-- Modal nyawa habis -->
+    <div
+      class="modal fade"
+      id="gameOver"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center p-5">
+            <h1 class="title-gameover">Game Over</h1>
+            <img src="./assets/img/main/angry-crab.svg" alt="" />
+            <p class="desc-gameover">Kau ku pecat!!!</p>
+
+            <a class="btn btn-game-over" href="./index.html">Kembali</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal nyawa habis -->
+
+    <!-- Modal Tamat -->
+    <div
+      class="modal fade"
+      id="theEnd"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center p-5">
+            <h1 class="title-the-end">Semua pesanan telah selesai!</h1>
+            <img src="./assets/img/main/happy-crab.svg" alt="" />
+            <p class="desc-the-end">
+              Uang sebesar <b id="uangModal"></b> akan diberikan kepada Tuan
+              Krab secara ikhlas
+            </p>
+
+            <a class="btn btn-game-over" href="./index.html">Kembali</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Tamat -->
+    <!-- Modal Salah -->
+    <div
+      class="modal fade"
+      id="salah"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center p-5">
+            <h1 class="title-the-end">Komposisi Burger Salah!</h1>
+            <div class="d-flex justify-content-center">
+              <div class="card card-count my-5">
+                <div class="card-body">
+                  <h1 class="count-value" id="heart-count">4</h1>
+                  <p class="count-title">Nyawa</p>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-game-over"
+              data-bs-dismiss="modal"
+            >
+              Coba Lagi
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Salah -->
+
     <img src="./assets/img/intro/decoration1.png" class="decoration1" />
     <img src="./assets/img/intro/decoration2.png" class="decoration2" />
     <audio loop autoplay>
       <source src="./assets/sound/krusty-krab.mp3" type="audio/mpeg" />
       Browser Anda tidak mendukung elemen audio.
     </audio>
-    <!-- <div id></div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

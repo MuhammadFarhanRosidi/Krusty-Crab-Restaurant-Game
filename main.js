@@ -1,50 +1,52 @@
 // ! Dataset
 let listPemesan = [
   {
-    name: "asep",
-    orderedBurger: ["bun-bottom", "beef", "bun-top"],
+    name: "Asep",
+    orderedBurger: ["bun-bottom", "bun-top"],
     description:
       " Saya ingin burger yang gaada sayur",
     price: 100,
     isCorrect: false,
   },
   {
-    name: "hanni pham",
+    name: "Hanni pham",
     orderedBurger: ["bun-bottom", "beef", "cheese", "bun-top"],
     description: "aku mau cheeseburger tanpa sayur ya",
     price: 100,
+    description: "aku mau burger dikasih spongebob 1 lapis",
+    price: 40,
     isCorrect: false,
   },
   {
-    name: "windah",
-    orderedBurger: ["bun-bottom", "lettuice", "beef", "cheese", "bun-top"],
-    description: "aku mau burger original ya",
-    price: 100,
+    name: "Windah",
+    orderedBurger: ["bun-bottom", "beef", "lettuice", "cheese", "bun-top"],
+    description: "aku mau burger yang ada kuning sama ijo nya",
+    price: 50,
     isCorrect: false,
   },
   {
-    name: "shaqueela",
+    name: "Shaqueela",
     orderedBurger: ["bun-bottom", "beef", "beef", "bun-top"],
-    description: "aku mau burger yang bikin senyum lebar",
-    price: 100,
+    description: "aku mau burger yang sapi banget",
+    price: 40,
     isCorrect: false,
   },
   {
-    name: "laravelia",
+    name: "Laravelia",
     orderedBurger: ["bun-bottom", "lettuice", "lettuice", "bun-top"],
     description: "burger diet kayaknya sehat",
-    price: 100,
+    price: 40,
     isCorrect: false,
   },
   {
-    name: "adit",
-    orderedBurger: ["bun-bottom", "cheese", "cheese", "bun-top"],
+    name: "Adit",
+    orderedBurger: ["bun-bottom", "cheese", "beef", "cheese", "bun-top"],
     description: "burger asin kayaknya menarik",
-    price: 100,
+    price: 50,
     isCorrect: false,
   },
   {
-    name: "sultan arab",
+    name: "Sultan Arab",
     orderedBurger: [
       "bun-bottom",
       "lettuice",
@@ -110,10 +112,13 @@ function validateAnswer(orderedBurgerArr, cookedBurgerArr) {
 function wrongHandler() {
   --lives;
   livesHeart.textContent = lives;
+  let myModal = new bootstrap.Modal(document.getElementById('salah'));
+  document.getElementById('heart-count').innerText = lives
+  myModal.show();
   //   Handling kalo misal nyawanya habis (belum selesai)
   if (lives <= 0) {
-    alert("Sayang sekali nyawamu habis, game over!");
-    windows.location.replace("index.html");
+    let myModal = new bootstrap.Modal(document.getElementById('gameOver'));
+    myModal.show();
   }
 }
 
@@ -158,11 +163,15 @@ function correctHandler() {
     }
   }
 
-  tempProgressBar = (tempProgressBar / listPemesan.length) * 100;
+  tempProgressBar = ((tempProgressBar / listPemesan.length) * 100).toFixed(1);
   progressBar.style.width = `${tempProgressBar}%`;
+  document.getElementById('progress-bar').innerText = `Progres: ${tempProgressBar}%`
 
   if (tempProgressBar === 100) {
-    alert("Selamat! Anda telah menyelesaikan semua pesanan!");
+    // alert("Selamat! Anda telah menyelesaikan semua pesanan!");
+    let myModal = new bootstrap.Modal(document.getElementById('theEnd'));
+    document.getElementById('uangModal').innerText = totalMoney
+    myModal.show();
   }
 }
 
