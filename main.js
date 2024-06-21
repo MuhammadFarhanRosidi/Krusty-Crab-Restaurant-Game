@@ -151,6 +151,9 @@ function correctHandler() {
   } else {
     questionTitle.innerText = "Semua pesanan telah selesai!";
     questionDesc.innerText = "Terima kasih telah melayani semua pelanggan!";
+    let myModal = new bootstrap.Modal(document.getElementById('theEnd'));
+    document.getElementById('uangModal').innerText = totalMoney
+    myModal.show();
   }
   moneyGaji.innerText = totalMoney;
 
@@ -165,12 +168,10 @@ function correctHandler() {
   progressBar.style.width = `${tempProgressBar}%`;
   document.getElementById('progress-bar').innerText = `Progres: ${tempProgressBar}%`
 
-  if (tempProgressBar === 100) {
-    // alert("Selamat! Anda telah menyelesaikan semua pesanan!");
-    let myModal = new bootstrap.Modal(document.getElementById('theEnd'));
-    document.getElementById('uangModal').innerText = totalMoney
-    myModal.show();
-  }
+  // if (tempProgressBar === 100) {
+  //   // alert("Selamat! Anda telah menyelesaikan semua pesanan!");
+    
+  // }
 }
 
 function addItem(item) {
